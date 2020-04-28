@@ -1,51 +1,39 @@
 {
-  "name": "tikets-client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/styled-components": "^5.0.1",
-    "node-sass": "^4.13.1",
-    "prettier": "2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "styled-components": "^5.1.0",
-    "typescript": "~3.7.2"
-  },
+  "name": "tickets-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "lint": "eslint",
+    "start": "node src/server.js",
+    "dev": "./node_modules/.bin/nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrinderBrad/tikets-api.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GrinderBrad/tikets-api/issues"
+  },
+  "homepage": "https://github.com/GrinderBrad/tikets-api#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.7",
+    "nodemon": "^2.0.3",
+    "uuid": "^7.0.3",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
-    "prettier": {
-      "trailingComma": "es5",
-      "tabWidth": 4,
-      "semi": true,
-      "singleQuote": true
-    }
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2"
   }
 }
