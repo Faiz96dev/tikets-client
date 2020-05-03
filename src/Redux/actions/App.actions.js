@@ -1,5 +1,3 @@
-
-
 import {getAccessToken} from "../../services/cookies.service";
 
 export const ACTION_TYPES = {
@@ -8,7 +6,6 @@ export const ACTION_TYPES = {
 
 export const initializeApp = () => (dispatch) => {
     let  token = getAccessToken()
-
     if (token){
         return dispatch({
             type: ACTION_TYPES.INITIALIZED_SUCCESS

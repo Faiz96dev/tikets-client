@@ -1,4 +1,5 @@
 import React from 'react'
+import './Preloader.scss'
 
 let Preloader = props =>{
     return (<div>

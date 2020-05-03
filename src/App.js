@@ -1,28 +1,31 @@
 import React, {Component} from "react";
 import "./App.css";
 import {Route, BrowserRouter, withRouter} from "react-router-dom";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import MainContainer from "./components/Main/MainContainer";
 import Preloader from "./components/Preloader/Preloader";
-import {initializeApp} from "./Redux/actions/Auth.actions";
+import {initializeApp} from "./Redux/actions/App.actions";
+import LoginContainer from "./components/Login/LoginContainer";
+import {getAuth} from "./Redux/actions/Auth.actions";
 
 class App extends Component {
-    componentDidMount() {
-        this.props.initializeApp()
+
+    async componentDidMount  ()  {
+        console.log('App mounted')
+        await this.props.getAuth()
+        console.log(this.props)
     }
     render() {
-        if (!this.props.initialaized) {
-            debugger
-            return <Preloader/>
-        }
+        // if (!this.props.initialaized) {
+        //     return <Preloader/>
+        // }
         return (
             <BrowserRouter>
                 <div className="App">
                         <Route path="/main" component={() => <MainContainer/>}/>
-                        <Route path="/login" component={() => <Login/>}/>
+                        <Route path="/" component={() => <LoginContainer/>}/>
+                        <Route path="/pre" component={() => <Preloader/>}/>
                 </div>
             </BrowserRouter>
         )
@@ -34,4 +37,6 @@ const mapStateToProps = (state) => ({
 })
 export default compose(
     // withRouter,
-    connect(mapStateToProps, {initializeApp}))(App);
+    connect(mapStateToProps, {getAuth}))(App);
+
+

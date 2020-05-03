@@ -4,11 +4,10 @@ import * as AuthActions from '../../Redux/actions/Auth.actions';
 import LoginPage from "./Login";
 import {Login} from "../../Redux/actions/Auth.actions";
 
-function mapDispatchToProps (dispatch)   {
+let mapDispatchToProps = dispatch =>   {
     return {
         Login: (data) => {
             dispatch(Login(data))
-            this.history.push('/main')
         } ,
     }
 }

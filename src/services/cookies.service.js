@@ -5,6 +5,6 @@ export const setTokensCookies = (tokens) => {
     Cookies.set('refresh', tokens.refresh);
 }
 
-export const getAccessToken = () => {
-    return Cookies.get('access');
+export const getAccessToken = async () => {
+    return await Cookies.get('access');
 }
